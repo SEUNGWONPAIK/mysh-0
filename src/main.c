@@ -14,9 +14,11 @@ int main()
   char** argv;
 
   while (1) {
-    fgets(buf, 8096, stdin);
 
+    fgets(buf, 8096, stdin);
+    
     mysh_parse_command(buf, &argc, &argv);
+
 
     if (strcmp(argv[0], "") == 0) {
       goto release_and_continue;
